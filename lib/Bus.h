@@ -4,6 +4,8 @@
 #include "Seat.h"
 
 class Bus {
+private:
+  int reservedSeatCount;
 public:
   int busNo;
   std::string driverName;
