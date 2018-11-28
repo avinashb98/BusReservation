@@ -24,6 +24,7 @@ public:
   );
 
   std::string GetDepartureTime() const;
+  std::string GetArrivalTime() const;
 
   void GetSeatStatus() const;
 

@@ -23,6 +23,9 @@ destination(dest) {
 std::string Bus::GetDepartureTime() const {
   return departure -> GetTime();
 };
+std::string Bus::GetArrivalTime() const {
+  return arrival -> GetTime();
+};
 
 void Bus::GetSeatStatus() const {
   for (auto seat = seats.begin(); seat != seats.end(); ++seat) {
