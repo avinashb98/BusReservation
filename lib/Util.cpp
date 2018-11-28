@@ -2,7 +2,7 @@
 #include "Bus.h"
 #include "Util.h"
 
-void Util::Install(std::map<int, Bus> &buses) {
+void Util::Install(std::map<int, Bus*> &buses) {
   int busNo;
   std::string name, src, dest, dep, arr;
   
@@ -22,16 +22,17 @@ void Util::Install(std::map<int, Bus> &buses) {
   std::cin >> arr;
 
   Bus* b1 = new Bus(1, name, src, dest, dep, arr);
+  buses[busNo] = b1;
 };
 
-void Util::Show(std::map<int, Bus> &buses) {
-
-};
-
-void Util::Reservation(std::map<int, Bus> &buses) {
+void Util::Show(std::map<int, Bus*> &buses) {
 
 };
 
-void Util::BusesAvailable(std::map<int, Bus> &buses) {
+// void Util::Reservation(std::map<int, Bus> &buses) {
 
-};
+// };
+
+// void Util::BusesAvailable(std::map<int, Bus> &buses) {
+
+// };

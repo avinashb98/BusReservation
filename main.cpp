@@ -1,9 +1,12 @@
 #include <iostream>
 #include <map>
 #include "lib/Bus.h"
+#include "lib/Util.h"
+
 using namespace std;
 
 map<int, Bus*> buses;
+Util util;
 
 int prompt() {
   int choice;
@@ -18,26 +21,26 @@ int prompt() {
 }
 
 int main() {
-  int choice;
-  do {
-    choice = prompt();
-    switch(choice) {
-      case 1:
-        break;
-      case 2:
-        break;
-      case 3:
-        break;
-      case 4:
-        break;
-      case 5:
-        cout << "Thank You" << endl;
-        return(0);
-      default:
-        cout << "Invalid Choice. Try Again ->";
-    }
-  } while(1);
-
-  int i = prompt();
+  // int choice;
+  // do {
+  //   choice = prompt();
+  //   switch(choice) {
+  //     case 1:
+  //       break;
+  //     case 2:
+  //       break;
+  //     case 3:
+  //       break;
+  //     case 4:
+  //       break;
+  //     case 5:
+  //       cout << "Thank You" << endl;
+  //       return(0);
+  //     default:
+  //       cout << "Invalid Choice. Try Again ->";
+  //   }
+  // } while(1);
+  util.Install(buses);
+  (*buses[1]).GetSeatStatus();
   return 0;
 }
