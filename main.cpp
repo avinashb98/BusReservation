@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Bus.h"
+#include "lib/Bus.h"
 
 using namespace std;
 
