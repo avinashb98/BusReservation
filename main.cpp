@@ -40,7 +40,10 @@ int main() {
   //       cout << "Invalid Choice. Try Again ->";
   //   }
   // } while(1);
-  util.Install(buses);
+  util.Install(1, "John", "Lucknow", "Delhi", "20:00", "05:00", buses);
+  util.Reservation(1, 4, "Alice", buses);
+  util.Reservation(1, 5, "Bob", buses);
+  util.Reservation(1, 6, "Cedric", buses);
   (*buses[1]).GetSeatStatus();
   return 0;
 }

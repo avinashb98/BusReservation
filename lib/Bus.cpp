@@ -29,7 +29,9 @@ std::string Bus::GetArrivalTime() const {
 
 void Bus::GetSeatStatus() const {
   for (auto seat = seats.begin(); seat != seats.end(); ++seat) {
-    std::cout << "Seat No: " << (*seat) -> number << " Reserved: " << (*seat) -> reserved;
+    std::string isReserved = (*seat) -> reserved ? "Reserved" : "Vacant";
+    std::cout << "Seat No: " << ((*seat) -> number) + 1 << " " << isReserved;
+    // std::cout << (*seat) -> reserved << std::endl;
     if((*seat) -> reserved) {
       std::cout << " Occupant: " << (*seat) -> occupant;
     }
@@ -43,12 +45,13 @@ void Bus::ReserveSeat(int seatNum, std::string name) {
     return;
   }
   int ctr = 0;
-  for(auto seat = seats.begin(); seat != seats.end(); ++seat) {
+  for(auto seat = seats.begin(); seat != seats.end(); ++seat) {    
     if((ctr + 1) == seatNum) {
-      (*seat) -> reserved = true;
-      (*seat) -> occupant = name;
+      (*seat)->reserved = 1;
+      (*seat)->occupant = name;
       break;
     }
+    ctr++;
   }
   reservedSeatCount++;
   std::cout << "Count: " << reservedSeatCount << std::endl;
