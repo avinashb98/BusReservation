@@ -16,6 +16,7 @@ destination(dest) {
   for(int i = 0; i < 32; i++) {
     seats.push_back(new Seat(i));
   }
+  driverName = drName;
   departure = new Date(dep);
   arrival = new Date(arr);
 };
@@ -31,7 +32,6 @@ void Bus::GetSeatStatus() const {
   for (auto seat = seats.begin(); seat != seats.end(); ++seat) {
     std::string isReserved = (*seat) -> reserved ? "Reserved" : "Vacant";
     std::cout << "Seat No: " << ((*seat) -> number) + 1 << " " << isReserved;
-    // std::cout << (*seat) -> reserved << std::endl;
     if((*seat) -> reserved) {
       std::cout << " Occupant: " << (*seat) -> occupant;
     }
